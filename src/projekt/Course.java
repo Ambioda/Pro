@@ -34,13 +34,13 @@ public class Course extends javax.swing.JFrame {
      
         try {
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
         pst1 = con.prepareStatement("select * from kursy");
         rs = pst1.executeQuery();
         Courses.removeAllItems();
         while(rs.next())
         {
-        Courses.addItem(rs.getString(2));
+        Courses.addItem(rs.getString(1));
         }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Course.class.getName()).log(Level.SEVERE, null, ex);
@@ -228,8 +228,8 @@ public class Course extends javax.swing.JFrame {
         String telephone = telephones.getText();
         String adres = adress.getText();
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
-        pst = con.prepareStatement("insert into course(FirstName,LastName,Gender,Course,Telephone,adress)values(?,?,?,?,?,?");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
+        pst = con.prepareStatement("insert into course(FirstName,LastName,Gender,Course,Telephone,adres)values(?,?,?,?,?,?)");
         pst.setString(1,firstname);
         pst.setString(2,lastname);
         pst.setString(3,gender);

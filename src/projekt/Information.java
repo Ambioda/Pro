@@ -141,7 +141,7 @@ private void table_update1()
     int c;
     try {
             Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
         pst = con.prepareStatement("select * from information");
         rs = pst.executeQuery();
         ResultSetMetaData rss = rs.getMetaData();

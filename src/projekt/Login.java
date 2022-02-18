@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
         try 
         {
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
         if(User.getText().isEmpty() || Pass.getText().isEmpty())
         {
         JOptionPane.showMessageDialog(this,"Nazwa uzytkownika lub hasło jest puste !");
@@ -185,7 +185,7 @@ public class Login extends javax.swing.JFrame {
         String username = User.getText();
         String password = Pass.getText();
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
         pst = con.prepareStatement("select * from users where UserName = ? and Password = ?");
         pst.setString(1, username);
         pst.setString(2, password);

@@ -171,8 +171,8 @@ public class CreateStudent extends javax.swing.JFrame {
         String username = User.getText();
         String confirmpass = PassR.getText();
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
-        pst = con.prepareStatement("insert into users *UserName,Password)values(?,?) ");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
+        pst = con.prepareStatement("insert into users (UserName,Password)values(?,?) ");
         pst.setString(1,username);
         pst.setString(2,confirmpass);
         pst.executeUpdate();

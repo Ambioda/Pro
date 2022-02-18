@@ -133,7 +133,7 @@ ResultSet rs;
     int c;
     try {
             Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://192.168.2.34/aplikacja","root","");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/aplikacjaa","root","");
         pst = con.prepareStatement("select * from library");
         rs = pst.executeQuery();
         ResultSetMetaData rss = rs.getMetaData();
@@ -147,8 +147,8 @@ ResultSet rs;
                 Vector v1 = new Vector();
                 for (int a=1; a<=c; a++)
                 {
-                v1.add(rs.getString("Tytuł"));
-                v1.add(rs.getString("Wypożyczono"));
+                v1.add(rs.getString("Tytul"));
+                v1.add(rs.getString("Wypozyczono"));
 
                 }
                 Dk.addRow(v1);
